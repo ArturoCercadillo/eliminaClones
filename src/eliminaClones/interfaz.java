@@ -1,7 +1,14 @@
 package eliminaClones;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
@@ -15,8 +22,19 @@ public class interfaz extends JFrame{
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		texto= new JTextArea();
-		contentPane.add(texto);
+		texto= new JTextArea(10,60);
+		JScrollPane scrollPane = new JScrollPane(texto);
+		contentPane.add(scrollPane);
+		JButton afondo = new JButton("A fondo");
+		afondo.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				Main.buscarAFondo();
+			}
+		});
+		contentPane.add(afondo);
 		setVisible(true);
 	}
 	public void escribir(String cadena){

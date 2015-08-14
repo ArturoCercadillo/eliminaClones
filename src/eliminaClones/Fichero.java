@@ -43,5 +43,12 @@ public Fichero(String nombre, long tamano,
 	public String toString() {
 		return "Fichero [nombre=" + nombre + "]";
 	}
+	public String comparar(){
+		System.out.println(nombre);
+		if(nombre.lastIndexOf(".")!=-1)
+			return nombre.substring(0,nombre.lastIndexOf("."));
+		else
+			return nombre;
+	}
 	
 }
